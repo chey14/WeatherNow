@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Now</title>
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../src/output.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+
+    <nav>
+      <div
+        class="bg-blue-800 text-white flex justify-center items-center h-20 p-4"
+      >
+        <div
+          class="flex flex-row justify-between items-center w-11/12 sm:text-lg"
+        >
+          <img src="./assets/logo.png" alt="Logo" class="h-17 w-20" />
+
+          <ul class="flex flex-row font-semibold space-x-10">
+            <li>
+              <a href="#home">Home</a>
+            </li>
+            <li>
+              <a href="#about">About</a>
+            </li>
+            <li>
+              <a href="#Weather-info">Check Weather</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- BANNER -->
+
+    <div class="w-full h-4/5 relative">
+      <div class="flex flex-col items-center">
+        <div
+          class="text-4xl text-white absolute z-50 lg:w-3/4 w-1/2 mx-auto h-full flex flex-col justify-center items-center"
+        >
+          <h1 class="lg:text-6xl font-bold mb-4">Welcome to Weather Now!</h1>
+          <p class="text-xl mb-6">
+            Get accurate and real-time weather updates wherever you are.
+          </p>
+        </div>
+      </div>
+
+      <div id="default-carousel" class="relative" data-carousel="static">
+        <!-- Carousel wrapper -->
+        <div class="relative overflow-hidden h-[550px]">
+          <!-- Slide 1 -->
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img
+              src="https://images.unsplash.com/photo-1584267385494-9fdd9a71ad75?w=1920&auto=format&fit=crop&q=100"
+              class="w-full h-full object-cover"
+              alt="Slide 1"
+            />
+          </div>
+          <!-- Slide 2 -->
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img
+              src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?w=1920&auto=format&fit=crop&q=100"
+              class="w-full h-full object-cover"
+              alt="Slide 2"
+            />
+          </div>
+          <!-- Slide 3 -->
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img
+              src="https://images.unsplash.com/photo-1545193544-312983719627?w=1920&auto=format&fit=crop&q=100"
+              class="w-full h-full object-cover"
+              alt="Slide 3"
+            />
+          </div>
+        </div>
+
+        <!-- Slider indicators -->
+        <div
+          class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-4 left-1/2"
+        >
+          <button
+            type="button"
+            class="w-3 h-3 rounded-full bg-gray-300"
+            aria-current="true"
+            data-carousel-slide-to="0"
+          ></button>
+          <button
+            type="button"
+            class="w-3 h-3 rounded-full bg-gray-300"
+            aria-current="false"
+            data-carousel-slide-to="1"
+          ></button>
+          <button
+            type="button"
+            class="w-3 h-3 rounded-full bg-gray-300"
+            aria-current="false"
+            data-carousel-slide-to="2"
+          ></button>
+        </div>
+
+        <!-- Left control -->
+        <button
+          type="button"
+          class="absolute top-1/2 left-4 transform -translate-y-1/2 z-30 flex items-center justify-center h-10 w-10 rounded-full border border-white bg-white/30 hover:bg-white/50 focus:ring-2 focus:ring-white"
+          data-carousel-prev
+        >
+          <svg
+            class="w-5 h-5 text-blue-800"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </button>
+
+        <!-- Right control -->
+        <button
+          type="button"
+          class="absolute top-1/2 right-4 transform -translate-y-1/2 z-30 flex items-center justify-center h-10 w-10 rounded-full border border-white bg-white/30 hover:bg-white/50 focus:ring-2 focus:ring-white"
+          data-carousel-next
+        >
+          <svg
+            class="w-5 h-5 text-blue-800"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!--About Section-->
+
+    <section id="About">
+      <div class="bg-blue-100 py-16">
+        <div class="px-6 container mx-auto text-center">
+          <h2 class="text-4xl font-bold text-blue-600 mb-6">
+            About Weather Now
+          </h2>
+          <p class="mb-8 text-blue-700 text-xl">
+            Weather Now is your go-to app for real-time, accurate weather
+            updates. Whether you're planning a trip, heading to work, or just
+            want to know if you need an umbrella, we provide you with the
+            weather information you need instantly.
+          </p>
+        </div>
+
+        <div class="grid-cols-1 grid md:grid-cols-3 gap-16">
+          <!--Feature 1-->
+          <div class="text-center">
+            <img
+              src="https://plus.unsplash.com/premium_vector-1714142580885-97d3f0e39f98?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YWNjdXJhdGUlMjBmb3JlY2FzdHN8ZW58MHwwfDB8fHww"
+              alt="Accurate"
+              class="w-20 h-20 mb-4 mx-auto"
+            />
+            <h3 class="text-blue-600 text-2xl font-semibold mb-2">
+              Accurate ForeCast
+            </h3>
+            <p class="text-blue-700">
+              We use advanced weather data to give you the most precise
+              forecasts, from hourly updates to long-term predictions.
+            </p>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="text-center">
+            <img
+              src="https://plus.unsplash.com/premium_vector-1711987379150-4a797da6fca5?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8R2xvYmFsJTIwQ292ZXJhZ2V8ZW58MHwwfDB8fHww"
+              alt="Global Coverage"
+              class="w-25 h-20 mx-auto mb-4"
+            />
+            <h3 class="text-2xl font-semibold text-blue-600 mb-2">
+              Global Coverage
+            </h3>
+            <p class="text-blue-700">
+              No matter where you are, Weather Now provides reliable weather
+              information for cities around the world.
+            </p>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="text-center">
+            <img
+              src="https://plus.unsplash.com/premium_vector-1737604356456-89220be9f8db?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fFVzZXIlMjBGcmllbmRseXxlbnwwfDB8MHx8fDA%3D"
+              alt="User-Friendly"
+              class="w-20 h-20 mx-auto mb-4"
+            />
+            <h3 class="text-2xl font-semibold text-blue-600 mb-2">
+              User-Friendly
+            </h3>
+            <p class="text-blue-700">
+              Designed with simplicity in mind, Weather Now ensures that you get
+              the information you need quickly and easily.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12 mx-auto px-20 text-center">
+          <p class="text-lg text-blue-700">
+            With Weather Now, you'll always be prepared for whatever the weather
+            brings. Our app makes checking the weather easy, fast, and reliable.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <!--Your City Weather-->
+
+    <div  class="bg-blue-900 flex justify-center items-center">
+
+        <div class="text-white z-50 flex flex-col justify-center items-center text-center p-20 mx-auto">
+
+            <!--Heading-->
+            <h1 class="text-4xl mb-4 lg:text-6xl font-bold">Seach Weather Now !</h1>
+
+            <!--Description-->
+            <p class="mb-6 text-xl">Get accurate and real-time weather updates wherever you are.</p>
+
+            <!--Search For Location-->
+            <div class="bg-white flex justify-center p-2 items-center rounded-full w-full max-w-lg">
+                <input type="text" placeholder="Enter Your City..." class="search-input w-full p-2 rounded-l-full border-none text-blue-700">
+                <button class="search-button text-white rounded-r-full hover:bg-blue-900 bg-blue-600 p-2">Search</button>
+            </div>
+
+            <div id="weather-info" class="mt-8 text-white p-6 rounded-lg shadow-lg bg-opacity-70 ">
+
+                <div id="city-name" class="text-3xl mb-2 font-semibold text-center">Weather in Delhi</div>
+                <div id="weather-location" class="text-xl mb-2 text-center">Location: Delhi</div>
+                <div id="weather-temprature" class="text-4xl mb-2 font-bold text-center">33.06°C</div>
+                <div id="weather-description" class="text-2xl mb-4 text-center flex justify-center items-center" >OverCast Clouds</div>
+                <div class="flex justify-between text-xl mb-2">
+                    <div id="sunrise" class="text-xl">Sunrise: 05:27</div>
+                    <div id="sunset" class="text-xl">Sunset: 19:22</div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 text-xl mb-2">
+                    <div id="humidity">Humidity: 75%</div>
+                    <div id="wind-speed">Wind Speed: 2.77 m/s</div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 text-xl mb-2">
+                    <div id="pressure">Pressure: 1000 hPa</div>
+                    <div id="visibility">Visibility: 10 km</div>
+                </div>
+                <div id="cloudiness" class="text-2xl text-center mb-2">Cloudiness: 98%</div>
+
+                <div class="mt-8 flex justify-center items-center ">
+                    <img src="./assets/logo.png" alt="Weather Photo" class="h-32 w-32">
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!--Footer-->
+
+    <div class="grid grid-cols-1 md:grid-cols-3  gap-5 w-11/12 mx-auto pt-20">
+
+        <a href="#" class="block p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
+            <p class="font-normal text-gray-700 dark:text-gray-400"> Here are the biggest enterprise technology acquisitions of 2021 so
+          far, in reverse chronological order.</p>
+
+        </a>
+
+        <a href="#" class="block p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
+            <p class="font-normal text-gray-700 dark:text-gray-400"> Here are the biggest enterprise technology acquisitions of 2021 so
+          far, in reverse chronological order.</p>
+
+        </a>
+
+        <a href="#" class="block p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
+            <p class="font-normal text-gray-700 dark:text-gray-400"> Here are the biggest enterprise technology acquisitions of 2021 so
+          far, in reverse chronological order.</p>
+
+        </a>
+    </div>
+
+    <footer class="bg-blue-900  flex flex-col justify-center items-center py-4 bottom-4 text-sm mt-14">
+        <p class="text-white">© 2025 WeatherApp. All rights reserved.</p>
+        <div class="mt-2">
+            <a href="#" class="text-blue-300 hover:text-blue-500">Privacy Policy</a>
+            |
+            <a href="#" class="text-blue-300 hover:text-blue-500">Terms of Service</a>
+
+        </div>
+
+    </footer>
+
+
+
+    <script src="weather.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+  </body>
+</html>
