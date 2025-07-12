@@ -34,12 +34,20 @@ SearchButton.addEventListener("click",async ()=>{
     console.log(city);
     const APIKey="066828f1425519ba1a18462a6aa1ab79";
     try{
+
+        if (data.cod !== 200) {
+            alert("City not found, please try again.");
+            return;
+        }
+
+
+
         const BASE_URL=`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKey}`;
         const response =await fetch(BASE_URL);
         const data=await response.json();
         // Extracting and Displaying Weather Data Directly
         cityName.innerText=`Weather in ${data.name}`;
-        WeatherLocation.innerText=`Location : ${data.name};`
+        WeatherLocation.innerText=`Location : ${data.name}`;
         WeatherTemprature.innerText=`${data.main.temp}°C`;
         WeatherDescription.innerText=data.weather[0].description.charAt(0).toUpperCase() +
         data.weather[0].description.slice(1);
@@ -57,6 +65,8 @@ SearchButton.addEventListener("click",async ()=>{
     }
     catch(error){
         //console.log(error);
+        console.error("Error fetching weather data:", error);
+        alert("An Error Occured While Fetching the Weather data.Please try Again");
     }
 })
 
